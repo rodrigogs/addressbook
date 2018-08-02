@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.3
+
+    working_directory: ~/addressbook
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - lib-dependencies-{{ checksum "package.json" }}
+            - lib-dependencies-
+
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+
+      - run:
+          name: Install dependencies
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: lib-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Run tests/coverage
+          command: |
+            npm run coverage
+            ./cc-test-reporter format-coverage -t lcov -o coverage.json coverage/lcov.info
+            ./cc-test-reporter upload-coverage -i coverage.json

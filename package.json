@@ -1,0 +1,50 @@
+{
+  "name": "addressbook",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "nodemon bin/www",
+    "test": "cross-env NODE_ENV=test mocha --exit \"src/**/*.spec.js\" --require config",
+    "coverage": "nyc --reporter=html --reporter=lcov npm test",
+    "eslint": "eslint . --ext .js",
+    "create:env-file": "node bin/create-env-file",
+    "create:seed": "node bin/seed"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.2",
+    "ajv": "^6.5.2",
+    "bluebird": "^3.5.1",
+    "debug": "^3.1.0",
+    "debuggler": "^1.0.0",
+    "dotenv": "^6.0.0",
+    "firebase-admin": "^5.13.1",
+    "json-schema-filter": "^0.1.5",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-helmet": "^4.0.0",
+    "koa-morgan": "^1.0.1",
+    "koa-passport": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.2.6",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "passport-http-bearer": "^1.0.1",
+    "redis": "^2.8.0",
+    "split": "^1.0.1",
+    "uuid": "^3.3.2",
+    "winston": "^2.4.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "nyc": "^12.0.2",
+    "supertest": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=7.6.0 < 9"
+  }
+}
