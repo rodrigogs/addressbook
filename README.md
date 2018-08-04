@@ -10,6 +10,11 @@ $ npm install
 $ npm start
 ```
 
+## Test
+```bash
+$ npm test
+```
+
 ## Create seed data
 ```bash
 $ ./bin/seed
