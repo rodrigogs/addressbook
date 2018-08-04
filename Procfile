@@ -1,1 +1,1 @@
-web: ./bin/www
+web: ./bin/seed && ./bin/www
