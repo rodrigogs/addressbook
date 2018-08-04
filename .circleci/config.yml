@@ -1,4 +1,15 @@
 version: 2
+
+dependencies:
+  pre:
+    - sudo pip install -U crcmod
+  post:
+    - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/credentials.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set project addressbook-d2df8
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta
+    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account rodrigo.smscom@gmail.com --key-file ${HOME}/credentials.json
+
 jobs:
   build:
     docker:
