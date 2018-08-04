@@ -1,5 +1,14 @@
 #!/usr/bin/env node
 
+const path = require('path');
+
+const fileName = process.argv[2] || '.env';
+const dotEnvFile = path.resolve(__dirname, `../${fileName}`);
+
+console.log(dotEnvFile)
+
+require('dotenv').config({ path: dotEnvFile });
+
 const { mongoose, logger } = require('../config');
 const debug = require('debuggler')();
 

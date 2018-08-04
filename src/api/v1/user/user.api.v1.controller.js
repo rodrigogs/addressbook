@@ -33,9 +33,9 @@ const UserController = {
   /**
    */
   async update(ctx) {
-    debug(`updating user "${ctx.request.params.id}"`);
+    debug(`updating user "${ctx.params.id}"`);
 
-    const { id } = ctx.request.params;
+    const { id } = ctx.params;
     const { body } = ctx.request;
 
     await UserService.update(id, body);
@@ -46,9 +46,9 @@ const UserController = {
   /**
    */
   async disable(ctx) {
-    debug(`disabling user "${ctx.request.params.id}"`);
+    debug(`disabling user "${ctx.params.id}"`);
 
-    const { id } = ctx.request.params;
+    const { id } = ctx.params;
 
     await UserService.disable(id);
 

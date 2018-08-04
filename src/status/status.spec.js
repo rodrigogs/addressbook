@@ -22,9 +22,9 @@ afterEach(() => {
   server.close();
 });
 
-describe('StatusService', () => {
+describe('Application status', () => {
 
-  describe('#getStatus', () => {
+  describe('/', () => {
 
     it('should return application status', async () => {
       const pkg = require('../../package.json');
