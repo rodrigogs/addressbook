@@ -1,20 +1,19 @@
 version: 2
-
-dependencies:
-  pre:
-    - sudo pip install -U crcmod
-  post:
-    - mkdir ${HOME}/.addressbook
-    - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/.addressbook/credentials.json
-    - sudo /opt/google-cloud-sdk/bin/gcloud config set project addressbook-d2df8
-    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
-    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta
-    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account rodrigo.smscom@gmail.com --key-file ${HOME}/.addressbook/credentials.json
-
 jobs:
   build:
     docker:
       - image: circleci/node:8.11.3
+      
+  dependencies:
+    pre:
+      - sudo pip install -U crcmod
+    post:
+      - mkdir ${HOME}/.addressbook
+      - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/.addressbook/credentials.json
+      - sudo /opt/google-cloud-sdk/bin/gcloud config set project addressbook-d2df8
+      - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+      - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta
+      - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account rodrigo.smscom@gmail.com --key-file ${HOME}/.addressbook/credentials.json
 
     working_directory: ~/addressbook
 
