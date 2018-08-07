@@ -38,6 +38,10 @@ jobs:
           key: lib-dependencies-{{ checksum "package.json" }}
 
       - run:
+          name: Seed
+          command: npm run create:seed
+
+      - run:
           name: Run tests/coverage
           command: |
             npm run coverage
