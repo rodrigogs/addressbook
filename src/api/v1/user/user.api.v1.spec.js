@@ -38,7 +38,7 @@ afterEach(() => {
 });
 
 const adaptStr = str => (min, max) => {
-  str.padEnd(min, '_');
+  str = str.padEnd(min, '_');
   return str.substr(0, max);
 };
 
