@@ -1,16 +1,4 @@
 version: 2
-
-dependencies:
-  pre:
-    - sudo pip install -U crcmod
-  post:
-    - mkdir ${HOME}/.addressbook
-    - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/.addressbook/credentials.json
-    - sudo /opt/google-cloud-sdk/bin/gcloud config set project addressbook-d2df8
-    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
-    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install beta
-    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account rodrigo.smscom@gmail.com --key-file ${HOME}/.addressbook/credentials.json
-
 jobs:
   build:
     docker:
@@ -25,6 +13,12 @@ jobs:
           keys:
             - lib-dependencies-{{ checksum "package.json" }}
             - lib-dependencies-
+
+      - run:
+        name: Decode GCloud credentials
+        command: |
+          mkdir ${HOME}/.addressbook
+          echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/.addressbook/credentials.json
 
       - run:
           name: Setup Code Climate test-reporter
