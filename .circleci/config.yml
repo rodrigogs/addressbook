@@ -15,10 +15,10 @@ jobs:
             - lib-dependencies-
 
       - run:
-        name: Decode GCloud credentials
-        command: |
-          mkdir ${HOME}/.addressbook
-          echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/.addressbook/credentials.json
+          name: Decode GCloud credentials
+          command: |
+            mkdir ${HOME}/.addressbook
+            echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/.addressbook/credentials.json
 
       - run:
           name: Setup Code Climate test-reporter
