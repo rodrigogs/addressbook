@@ -11,6 +11,7 @@ rules:
   import/extensions: off
   import/order: off
   consistent-return: off
+  no-process-env: 2
 globals:
   process: on
   describe: on

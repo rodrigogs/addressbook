@@ -1,0 +1,32 @@
+version: '2'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+    - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null
+
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+    - 6379:6379
+    restart: always
+
+  web:
+    container_name: web
+    build: .
+    volumes:
+      - ~/.addressbook:/root/.addressbook
+      - .:/src/app
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    links:
+      - mongodb
+      - redis
+    depends_on:
+      - mongodb
+      - redis

@@ -42,6 +42,10 @@ jobs:
           command: npm run create:seed
 
       - run:
+          name: Lint
+          command: npm run eslint
+
+      - run:
           name: Run tests/coverage
           command: |
             npm run coverage

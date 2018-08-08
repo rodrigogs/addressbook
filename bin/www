@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-console.log('ausdhuasdhsad')
-
 const { logger, Env } = require('../config');
 const debug = require('debuggler')();
 const app = require('../src');

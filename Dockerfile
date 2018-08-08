@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:8.11.3-alpine
 
 WORKDIR /usr/src/app
 
@@ -6,8 +6,7 @@ COPY package*.json ./
 COPY package-lock.json ./
 
 RUN npm install
-RUN npm install --global pm2
 
 COPY . .
 
-CMD [ "node", "ecosystem.config.js" ]
+CMD [ "node", "bin/www" ]
