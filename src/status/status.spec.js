@@ -36,6 +36,7 @@ describe('Application status', () => {
           name: pkg.name,
           version: pkg.version,
           context: 'test',
+          docs: 'https://addressbook-.herokuapp.com/docs',
         });
     });
 
