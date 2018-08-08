@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 const DEFAULT_DURATION = 24 * (60 * (60 * 1000)); // 24h
 
-const scopes = ['admin', 'user', 'message'];
+const scopes = ['admin', 'user', 'contact'];
 const types = ['', 'admin', 'read', 'write'];
 
 const scopeTypes = scopes.reduce((result, scope) => {
