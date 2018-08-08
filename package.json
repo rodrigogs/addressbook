@@ -7,8 +7,7 @@
     "coverage": "nyc --reporter=html --reporter=lcov npm test",
     "eslint": "eslint . --ext .js",
     "create:env-file": "node bin/create-env-file",
-    "create:seed": "node bin/seed",
-    "heroku-prebuild": "mkdir /app/.addressbook && echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > /app/.addressbook/credentials.json"
+    "create:seed": "node bin/seed"
   },
   "dependencies": {
     "@koa/cors": "^2.2.2",
