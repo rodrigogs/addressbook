@@ -1,31 +1,47 @@
-# addressbook
+<p align="center">
+  <h3 align="center">addressbook</h3>
 
-## Setup
+  <p align="center">
+   <a href="https://circleci.com/gh/rodrigogs/addressbook">
+    <img src="https://circleci.com/gh/rodrigogs/addressbook.svg" alt="Build Status">
+   </a>
+
+   <a href="https://codeclimate.com/github/rodrigogs/addressbook">
+    <img src="https://codeclimate.com/github/rodrigogs/addressbook/badges/gpa.svg" alt="Code Climate">
+   </a>
+
+   <a href="https://codeclimate.com/github/rodrigogs/addressbook/coverage">
+    <img src="https://codeclimate.com/github/rodrigogs/addressbook/badges/coverage.svg" alt="Test Coverage">
+   </a>
+  </p>
+</p>
+
+### Setup
 ```bash
 $ npm install
 ```
 
-## Develop
+### Develop
 ```bash
 $ npm start
 ```
 
-## Test
+### Test
 ```bash
 $ npm test
 ```
 
-## Create seed data
+### Create seed data
 ```bash
 $ ./bin/seed
 ```
 
-## Run
+### Run
 ```bash
 $ ./bin/www
 ```
 
-## Environment
+### Environment
 **When `NODE_ENV` environment variable is not set to `production`, the application automatically tries to load the environment config from a `.env` file located in the project root folder.**
 * DEBUG
   - See: https://www.npmjs.com/package/debuggler
