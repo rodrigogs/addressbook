@@ -14,6 +14,7 @@
     <img src="https://codeclimate.com/github/rodrigogs/addressbook/badges/coverage.svg" alt="Test Coverage">
    </a>
    
+   <br>
    <a href="https://addressbook-.herokuapp.com/docs">
     API Documentation
    </a>
