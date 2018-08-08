@@ -63,3 +63,19 @@ $ ./bin/www
   - See: http://www.iana.org/assignments/uri-schemes/prov/redis
 * MONGO_URL
   - See: https://www.iana.org/assignments/uri-schemes/prov/mongodb
+
+### Authentication
+#### /api/v1/auth/jwt
+* username
+  * default: admin
+* password
+  * default: admin
+* scopes
+  * **admin:admin**
+  * **admin:read**
+  * **admin:write**
+  * **user:admin**
+  * **user:read**
+  * **user:write**
+  * **contact:admin**
+  * **contact:write**
