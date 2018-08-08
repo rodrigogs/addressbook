@@ -6,11 +6,14 @@ const {
 } = require('../config/index');
 
 const debug = require('debuggler')();
+const path = require('path');
 const Koa = require('koa');
 const helmet = require('koa-helmet');
 const morgan = require('koa-morgan');
 const bodyParser = require('koa-bodyparser');
 const cors = require('@koa/cors');
+const mount = require('koa-mount');
+const serve = require('koa-static');
 const passport = require('koa-passport');
 const errorMiddleware = require('./error.middleware');
 
@@ -27,6 +30,9 @@ const bootstrap = async () => {
   app.use(errorMiddleware());
   app.use(helmet());
   app.use(cors());
+
+  app.use(mount('/docs', serve(path.resolve(__dirname, '../docs'))));
+
   app.use(morgan(Env.HTTP_LOG_CONFIG, { stream: logger.stream }));
 
   app.use(passport.initialize());

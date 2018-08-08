@@ -9,6 +9,31 @@ const ContractValidator = JSONUtils.validate(ContactSchema);
 
 const ContactController = {
   /**
+   * @api {post} /v1/contact/ Create contact
+   * @apiVersion 1.0.0
+   * @apiName CreateContact
+   * @apiGroup Contact
+   * @apiPermission contact:write
+   *
+   * @apiDescription Creates a new contact.
+   *
+   * @apiExample Example usage:
+   * curl -X POST http://localhost:3000/v1/contact -d name=myenv
+   *
+   * @apiParam  {String}  firstName   Contact first name.
+   * @apiParam  {String}  lastName    Contact last name.
+   * @apiParam  {String}  companyName Contact company name.
+   * @apiParam  {String}  address     Contact address.
+   * @apiParam  {String}  phone       Contact phone.
+   * @apiParam  {String}  email       Contact email.
+   *
+   * @apiSuccess  {String}  firstName   Contact first name.
+   * @apiSuccess  {String}  lastName    Contact last name.
+   * @apiSuccess  {String}  companyName Contact company name.
+   * @apiSuccess  {String}  address     Contact address.
+   * @apiSuccess  {String}  phone       Contact phone.
+   * @apiSuccess  {String}  email       Contact email.
+   * @apiSuccess  {String}  createdAt   User creation date.
    */
   async create(ctx) {
     debug('creating contact', ctx.request.body);

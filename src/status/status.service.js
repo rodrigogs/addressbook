@@ -9,6 +9,7 @@ const StatusService = {
     name: pkg.name,
     version: pkg.version,
     context: Env.NODE_ENV,
+    docs: 'https://addressbook-.herokuapp.com/docs',
   }),
 };
 
