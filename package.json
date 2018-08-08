@@ -8,7 +8,7 @@
     "eslint": "eslint . --ext .js",
     "create:env-file": "node bin/create-env-file",
     "create:seed": "node bin/seed",
-    "heroku-prebuild": "mkdir ${HOME}/.addressbook && echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/.addressbook/credentials.json"
+    "heroku-prebuild": "mkdir /app/.addressbook && echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > /app/.addressbook/credentials.json"
   },
   "dependencies": {
     "@koa/cors": "^2.2.2",
