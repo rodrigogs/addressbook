@@ -39,6 +39,6 @@ $ ./bin/www
 * HTTP_LOG_CONFIG
   - See: https://github.com/expressjs/morgan#predefined-formats
 * REDIS_URL
-  - http://www.iana.org/assignments/uri-schemes/prov/redis
+  - See: http://www.iana.org/assignments/uri-schemes/prov/redis
 * MONGO_URL
   - See: https://www.iana.org/assignments/uri-schemes/prov/mongodb
