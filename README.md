@@ -13,6 +13,10 @@
    <a href="https://codeclimate.com/github/rodrigogs/addressbook/coverage">
     <img src="https://codeclimate.com/github/rodrigogs/addressbook/badges/coverage.svg" alt="Test Coverage">
    </a>
+   
+   <a href="https://addressbook-.herokuapp.com/docs">
+    API Documentation
+   </a>
   </p>
 </p>
 
